@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Edit Profile</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            <button type="submit" class="btn btn-success">Save changes</button>
+            <a href="{% url 'dashboard' %}"><button class="btn btn-warning" style="background-color: red;">Back</button></a>
+        </div>
+    </form>
+</div>
+{% endblock %}
